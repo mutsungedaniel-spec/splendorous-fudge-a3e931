@@ -186,50 +186,50 @@ section.alt{background:var(--cream)}
 .payhead{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid rgba(231,179,102,.3)}
 .payhead h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:24px;color:var(--gold-l);line-height:1.1}
 .payhead .way{font-size:11.5px;color:#C9A7B9;text-transform:uppercase;letter-spacing:1.4px}
-/* ---------- Fefe ---------- */
-#fefeBtn{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:10px;
+/* ---------- Anesu ---------- */
+#anesuBtn{position:fixed;right:20px;bottom:20px;z-index:80;display:flex;align-items:center;gap:10px;
   background:var(--purple);color:#fff;border:2px solid var(--gold);border-radius:40px;padding:8px 20px 8px 8px;cursor:pointer;
   font:800 14px Inter,sans-serif;letter-spacing:2px;box-shadow:0 8px 26px rgba(59,10,42,.42);
   transition:transform .2s ease, background .2s ease}
-#fefeBtn:hover{background:var(--purple-d);transform:translateY(-2px)}
-#fefeBtn img{height:40px;width:40px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
-#fefePanel{position:fixed;right:20px;bottom:20px;z-index:90;width:370px;max-width:calc(100vw - 32px);
+#anesuBtn:hover{background:var(--purple-d);transform:translateY(-2px)}
+#anesuBtn img{height:40px;width:40px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+#anesuPanel{position:fixed;right:20px;bottom:20px;z-index:90;width:370px;max-width:calc(100vw - 32px);
   background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;
   box-shadow:0 22px 60px rgba(30,6,21,.4);border:1px solid var(--line)}
 /* the ID rule above sets display:flex, which would otherwise beat the browser's
    default styling for [hidden] and leave the panel stuck open over the page */
-#fefePanel[hidden]{display:none}
-#fefeBtn[hidden]{display:none}
-.fefe-top{background:var(--purple-d);color:#fff;padding:13px 14px;display:flex;align-items:center;gap:11px}
-.fefe-top img{height:44px;width:44px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
-.fefe-top b{display:block;font-size:18px;font-weight:800;letter-spacing:3px;color:var(--gold-l);line-height:1.15}
-.fefe-top span{font-size:11.5px;color:#D9BFCE}
-.fefe-top button{margin-left:auto;background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
-.fefe-msgs{padding:14px;height:340px;overflow-y:auto;background:var(--cream);display:flex;flex-direction:column;gap:10px}
-.fefe-msgs .m{max-width:88%;padding:10px 13px;border-radius:12px;font-size:14px;line-height:1.55}
-.fefe-msgs .m.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:3px;align-self:flex-start;color:var(--ink)}
-.fefe-msgs .m.you{background:var(--purple);color:#fff;border-bottom-right-radius:3px;align-self:flex-end}
-.fefe-msgs .m a{color:var(--purple);text-decoration:underline}
-.fefe-msgs .m.you a{color:#fff}
-.fefe-msgs .m b{color:var(--purple-d)}
-.fefe-msgs .m.bot em{display:block;margin-top:7px;font-style:italic;color:var(--body);font-size:13.5px;
+#anesuPanel[hidden]{display:none}
+#anesuBtn[hidden]{display:none}
+.anesu-top{background:var(--purple-d);color:#fff;padding:13px 14px;display:flex;align-items:center;gap:11px}
+.anesu-top img{height:44px;width:44px;object-fit:contain;background:#fff;border-radius:50%;padding:4px}
+.anesu-top b{display:block;font-size:18px;font-weight:800;letter-spacing:3px;color:var(--gold-l);line-height:1.15}
+.anesu-top span{font-size:11.5px;color:#D9BFCE}
+.anesu-top button{margin-left:auto;background:none;border:0;color:#fff;font-size:24px;line-height:1;cursor:pointer;padding:0 4px}
+.anesu-msgs{padding:14px;height:340px;overflow-y:auto;background:var(--cream);display:flex;flex-direction:column;gap:10px}
+.anesu-msgs .m{max-width:88%;padding:10px 13px;border-radius:12px;font-size:14px;line-height:1.55}
+.anesu-msgs .m.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:3px;align-self:flex-start;color:var(--ink)}
+.anesu-msgs .m.you{background:var(--purple);color:#fff;border-bottom-right-radius:3px;align-self:flex-end}
+.anesu-msgs .m a{color:var(--purple);text-decoration:underline}
+.anesu-msgs .m.you a{color:#fff}
+.anesu-msgs .m b{color:var(--purple-d)}
+.anesu-msgs .m.bot em{display:block;margin-top:7px;font-style:italic;color:var(--body);font-size:13.5px;
   border-left:2px solid var(--gold);padding-left:9px}
-.fefe-chips{display:flex;gap:7px;flex-wrap:wrap;padding:10px 12px 0;background:#fff}
-.fefe-chips button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 13px;
+.anesu-chips{display:flex;gap:7px;flex-wrap:wrap;padding:10px 12px 0;background:#fff}
+.anesu-chips button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 13px;
   font:500 12.5px Inter,sans-serif;color:var(--purple);cursor:pointer}
-.fefe-chips button:hover{background:#F7EEF3;border-color:var(--purple)}
-.fefe-ask{display:flex;gap:8px;padding:12px;background:#fff}
-.fefe-ask input{flex:1;border:1px solid #cbd5e1;border-radius:22px;padding:11px 15px;font:inherit;font-size:14px}
-.fefe-ask input:focus{outline:2px solid #e6c4d8;border-color:var(--purple)}
-.fefe-ask button{background:var(--gold);border:0;border-radius:50%;width:42px;height:42px;color:#25121C;
+.anesu-chips button:hover{background:#F7EEF3;border-color:var(--purple)}
+.anesu-ask{display:flex;gap:8px;padding:12px;background:#fff}
+.anesu-ask input{flex:1;border:1px solid #cbd5e1;border-radius:22px;padding:11px 15px;font:inherit;font-size:14px}
+.anesu-ask input:focus{outline:2px solid #e6c4d8;border-color:var(--purple)}
+.anesu-ask button{background:var(--gold);border:0;border-radius:50%;width:42px;height:42px;color:#25121C;
   font-size:16px;cursor:pointer;flex:0 0 auto}
-.fefe-ask button:hover{background:var(--gold-l)}
-.fefe-foot{background:#fff;border-top:1px solid var(--line);padding:9px 14px 12px;font-size:11.5px;color:var(--muted);text-align:center}
-.fefe-foot a{color:var(--purple)}
+.anesu-ask button:hover{background:var(--gold-l)}
+.anesu-foot{background:#fff;border-top:1px solid var(--line);padding:9px 14px 12px;font-size:11.5px;color:var(--muted);text-align:center}
+.anesu-foot a{color:var(--purple)}
 @media(max-width:520px){
-  #fefePanel{right:8px;left:8px;bottom:8px;width:auto}
-  .fefe-msgs{height:min(52vh,360px)}
-  #fefeBtn{right:14px;bottom:14px;padding:10px 17px 10px 10px;font-size:14px}
+  #anesuPanel{right:8px;left:8px;bottom:8px;width:auto}
+  .anesu-msgs{height:min(52vh,360px)}
+  #anesuBtn{right:14px;bottom:14px;padding:10px 17px 10px 10px;font-size:14px}
 }
 .givescripture{max-width:820px;margin:0 0 30px;font-family:"Cormorant Garamond",serif;font-size:20px;
   font-style:italic;line-height:1.5;color:#F0DCE7;border-left:3px solid var(--gold);padding-left:20px}
@@ -326,7 +326,7 @@ footer .btm span:last-child{margin-left:auto}
   <span>Stand 1757 Chiwaridzo, Bindura</span>
   <span><a href="tel:+263772572564">+263 77 257 2564</a></span>
   <span class="sp">
-    <a href="#fefe">Ask FEFE</a>
+    <a href="#anesu">Ask ANESU</a>
     <a href="https://data.htmchurch.co" target="_blank" rel="noopener">Members database</a>
     <a href="https://www.facebook.com/search/top?q=Harvest%20Time%20Ministries" target="_blank" rel="noopener">Facebook</a>
     <a href="https://www.instagram.com/htmzimbabwe" target="_blank" rel="noopener">Instagram</a>
@@ -754,7 +754,7 @@ footer .btm span:last-child{margin-left:auto}
         <a href="#ministries">Ministries</a>
         <a href="#events">Events</a>
         <a href="#give">Giving</a>
-        <a href="#fefe">Ask FEFE</a>
+        <a href="#anesu">Ask ANESU</a>
         <a href="https://data.htmchurch.co" target="_blank" rel="noopener">Members database</a>
       </div>
       <div>
@@ -772,24 +772,24 @@ footer .btm span:last-child{margin-left:auto}
   </div>
 </footer>
 
-<!-- ============ FEFE — ministry helper ============ -->
-<button id="fefeBtn" aria-label="Open FEFE, the Harvest Time Ministries helper">
-  <img src="img/emblem.png" alt=""><span>FEFE</span>
+<!-- ============ ANESU — ministry helper ============ -->
+<button id="anesuBtn" aria-label="Open ANESU, the Harvest Time Ministries helper">
+  <img src="img/emblem.png" alt=""><span>ANESU</span>
 </button>
 
-<div id="fefePanel" hidden role="dialog" aria-label="FEFE, the Harvest Time Ministries helper">
-  <div class="fefe-top">
+<div id="anesuPanel" hidden role="dialog" aria-label="ANESU, the Harvest Time Ministries helper">
+  <div class="anesu-top">
     <img src="img/emblem.png" alt="Harvest Time Ministries">
-    <div><b>FEFE</b><span>Harvest Time Ministries</span></div>
-    <button id="fefeClose" aria-label="Minimise FEFE" title="Minimise">&minus;</button>
+    <div><b>ANESU</b><span>Harvest Time Ministries</span></div>
+    <button id="anesuClose" aria-label="Minimise ANESU" title="Minimise">&minus;</button>
   </div>
-  <div class="fefe-msgs" id="fefeMsgs"></div>
-  <div class="fefe-chips" id="fefeChips"></div>
-  <form class="fefe-ask" id="fefeForm">
-    <input id="fefeInput" placeholder="Ask about the church or the faith..." autocomplete="off">
+  <div class="anesu-msgs" id="anesuMsgs"></div>
+  <div class="anesu-chips" id="anesuChips"></div>
+  <form class="anesu-ask" id="anesuForm">
+    <input id="anesuInput" placeholder="Ask about the church or the faith..." autocomplete="off">
     <button type="submit" aria-label="Send">&#10148;</button>
   </form>
-  <div class="fefe-foot">Fefe is a helper, not a pastor. For prayer or counsel, call
+  <div class="anesu-foot">Anesu is a helper, not a pastor. For prayer or counsel, call
     <a href="tel:+263772572564">+263 77 257 2564</a>.</div>
 </div>
 
@@ -840,15 +840,15 @@ footer .btm span:last-child{margin-left:auto}
     }
   })();
 
-  /* ============ FEFE ============ */
+  /* ============ ANESU ============ */
   (function(){
     var OFFICE = '<a href="tel:+263772572564">+263 77 257 2564</a>';
 
-    /* Fefe's knowledge. To upgrade Fefe to a live AI later, replace answerFor()
+    /* Anesu's knowledge. To upgrade Anesu to a live AI later, replace answerFor()
        with a call to a server function — everything else stays as it is. */
     var KB = [
       { k:['hello','hi','hie','hey','greetings','good morning','good afternoon','good evening','shalom','makadii'],
-        a:'Greetings, and welcome to Harvest Time Ministries. I am Fefe. Ask me about our services, where we meet, our ministries or how to give &mdash; or about the faith itself.' },
+        a:'Greetings, and welcome to Harvest Time Ministries. I am Anesu. Ask me about our services, where we meet, our ministries or how to give &mdash; or about the faith itself.' },
 
       { k:['service','services','time','times','when do you meet','sunday','worship','midweek','wednesday','saturday','prayer time','meeting'],
         a:'Our gatherings:<br><b>Sunday Service</b> &mdash; 09:00 to 13:00<br><b>Lunchtime Prayer</b> &mdash; Monday to Friday, 13:00 to 14:00<br><b>Leadership Meeting &amp; Teaching</b> &mdash; Wednesday, 20:00 to 21:00 (online)<br><b>Youth Teachings</b> &mdash; Saturday, 13:00 to 14:30<br><b>Praise &amp; Worship Practice</b> &mdash; Saturday, 14:30 to 15:30<br>All are welcome &mdash; come as you are.' },
@@ -904,8 +904,8 @@ footer .btm span:last-child{margin-left:auto}
       { k:['marriage','divorce','counsel','counselling','advice','struggling','problem','sick','healing','deliverance','money problems','lost my job','grief','died','funeral'],
         a:'I am sorry you are carrying that, and it is more than I should try to answer here. Please speak to a real person who can listen properly &mdash; call ' + OFFICE + ' or message us on <a href="https://wa.me/263772572564" target="_blank" rel="noopener">WhatsApp</a>, and a pastor will make time for you.' },
 
-      { k:['fefe','who are you','are you a robot','are you human','artificial','ai','chatbot','bot'],
-        a:'I am Fefe, a helper on the Harvest Time Ministries website. I can tell you about our services, our ministries, our leaders and how to give, and point you to scripture. I am not a pastor though &mdash; for prayer, counsel or anything weighing on you, call ' + OFFICE + '.' },
+      { k:['anesu','who are you','are you a robot','are you human','artificial','ai','chatbot','bot'],
+        a:'I am Anesu, a helper on the Harvest Time Ministries website. I can tell you about our services, our ministries, our leaders and how to give, and point you to scripture. I am not a pastor though &mdash; for prayer, counsel or anything weighing on you, call ' + OFFICE + '.' },
 
       { k:['database','records','login','sign in','members database','password'],
         a:'The membership database at <a href="https://data.htmchurch.co" target="_blank" rel="noopener">data.htmchurch.co</a> is for assembly pastors only, and each one signs in with their own login. If you are a pastor and cannot get in, call the head office on ' + OFFICE + '.' },
@@ -942,9 +942,9 @@ footer .btm span:last-child{margin-left:auto}
       return bestScore > 0 ? best.a : MISS;
     }
 
-    var panel = document.getElementById('fefePanel'), btn = document.getElementById('fefeBtn'),
-        msgs = document.getElementById('fefeMsgs'), form = document.getElementById('fefeForm'),
-        input = document.getElementById('fefeInput'), chips = document.getElementById('fefeChips');
+    var panel = document.getElementById('anesuPanel'), btn = document.getElementById('anesuBtn'),
+        msgs = document.getElementById('anesuMsgs'), form = document.getElementById('anesuForm'),
+        input = document.getElementById('anesuInput'), chips = document.getElementById('anesuChips');
 
     function add(html, who){
       var d = document.createElement('div');
@@ -969,13 +969,13 @@ footer .btm span:last-child{margin-left:auto}
       panel.hidden = false; btn.style.display = 'none';
       if(!greeted){
         greeted = true;
-        add('Greetings, I am <b>FEFE</b>, here to help you find your way around Harvest Time Ministries. What would you like to know?', 'bot');
+        add('Greetings, I am <b>ANESU</b>, here to help you find your way around Harvest Time Ministries. What would you like to know?', 'bot');
       }
       setTimeout(function(){ input.focus(); }, 80);
     }
     function minimise(){ panel.hidden = true; btn.style.display = 'flex'; }
     btn.onclick = open;
-    document.getElementById('fefeClose').onclick = minimise;
+    document.getElementById('anesuClose').onclick = minimise;
     /* Esc minimises, and the conversation is kept for when it is opened again */
     document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !panel.hidden) minimise(); });
     form.addEventListener('submit', function(e){
@@ -984,7 +984,7 @@ footer .btm span:last-child{margin-left:auto}
       add(q.replace(/[<>]/g,''), 'you'); input.value = '';
       setTimeout(function(){ reply(q); }, 300);
     });
-    document.querySelectorAll('a[href="#fefe"]').forEach(function(a){
+    document.querySelectorAll('a[href="#anesu"]').forEach(function(a){
       a.onclick = function(e){ e.preventDefault(); open(); };
     });
   })();
