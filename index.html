@@ -170,11 +170,12 @@ section.alt{background:var(--cream)}
 .gallery figure:hover img{transform:scale(1.04)}
 .gallery figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,6,21,.9) 60%);color:#fff;padding:32px 16px 13px;font-size:13.5px;font-weight:500}
 @media(max-width:760px){.gallery{grid-template-columns:1fr;gap:14px}.gallery img{height:230px}}
-/* founder's day album */
+/* photo albums */
 .album{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
 .album a{display:block;border-radius:4px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .album img{display:block;width:100%;height:190px;object-fit:cover;transition:transform .6s ease}
 .album a:hover img{transform:scale(1.04)}
+#annualConference img{object-position:center 18%}
 @media(max-width:760px){.album{grid-template-columns:1fr 1fr;gap:8px}.album img{height:150px}}
 .fdlb{position:fixed;inset:0;z-index:1000;background:rgba(30,6,21,.94);display:flex;align-items:center;justify-content:center}
 .fdlb[hidden]{display:none}
@@ -665,6 +666,25 @@ footer .btm span:last-child{margin-left:auto}
       <a href="img/founders-day/fd-15.jpg"><img src="img/founders-day/fd-15-sm.jpg" alt="Members being served at the buffet" loading="lazy"></a>
       <a href="img/founders-day/fd-16.jpg"><img src="img/founders-day/fd-16-sm.jpg" alt="Members sharing the meal together" loading="lazy"></a>
     </div>
+    <h3 class="sec" style="margin-top:34px">2026 Annual Conference</h3>
+    <p class="muted-note" style="margin-top:6px">Manifesting Apostolic Purpose for Kingdom Fulfillment. Tap any photo to view it full size.</p>
+    <div class="album" id="annualConference">
+      <a href="img/annual-conference/ac-01.jpg"><img src="img/annual-conference/ac-01-sm.jpg" alt="The conference tent prepared for the 2026 Annual Conference" loading="lazy"></a>
+      <a href="img/annual-conference/ac-02.jpg"><img src="img/annual-conference/ac-02-sm.jpg" alt="The praise team leading worship beneath the conference banner" loading="lazy"></a>
+      <a href="img/annual-conference/ac-03.jpg"><img src="img/annual-conference/ac-03-sm.jpg" alt="Singers and musicians ministering in song" loading="lazy"></a>
+      <a href="img/annual-conference/ac-04.jpg"><img src="img/annual-conference/ac-04-sm.jpg" alt="A guest minister speaking from the pulpit" loading="lazy"></a>
+      <a href="img/annual-conference/ac-05.jpg"><img src="img/annual-conference/ac-05-sm.jpg" alt="The praise team in worship on the conference stage" loading="lazy"></a>
+      <a href="img/annual-conference/ac-06.jpg"><img src="img/annual-conference/ac-06-sm.jpg" alt="A guest minister addressing the conference" loading="lazy"></a>
+      <a href="img/annual-conference/ac-07.jpg"><img src="img/annual-conference/ac-07-sm.jpg" alt="A minister praying for members of the congregation" loading="lazy"></a>
+      <a href="img/annual-conference/ac-08.jpg"><img src="img/annual-conference/ac-08-sm.jpg" alt="Ministers praying over the congregation" loading="lazy"></a>
+      <a href="img/annual-conference/ac-09.jpg"><img src="img/annual-conference/ac-09-sm.jpg" alt="Women of the church at the conference grounds" loading="lazy"></a>
+      <a href="img/annual-conference/ac-10.jpg"><img src="img/annual-conference/ac-10-sm.jpg" alt="Two women of the church smiling together" loading="lazy"></a>
+      <a href="img/annual-conference/ac-11.jpg"><img src="img/annual-conference/ac-11-sm.jpg" alt="Friends of the ministry at the conference" loading="lazy"></a>
+      <a href="img/annual-conference/ac-12.jpg"><img src="img/annual-conference/ac-12-sm.jpg" alt="Two women of the church outside the tent" loading="lazy"></a>
+      <a href="img/annual-conference/ac-13.jpg"><img src="img/annual-conference/ac-13-sm.jpg" alt="A visiting guest with a young member of the church" loading="lazy"></a>
+      <a href="img/annual-conference/ac-14.jpg"><img src="img/annual-conference/ac-14-sm.jpg" alt="Members of the church dressed in black at the conference" loading="lazy"></a>
+      <a href="img/annual-conference/ac-15.jpg"><img src="img/annual-conference/ac-15-sm.jpg" alt="The choir in lilac gathered before the conference banner" loading="lazy"></a>
+    </div>
     <div class="fdlb" id="fdlb" hidden>
       <button class="fdlb-x" type="button" aria-label="Close">&times;</button>
       <button class="fdlb-p" type="button" aria-label="Previous photo">&#8249;</button>
@@ -1031,12 +1051,15 @@ footer .btm span:last-child{margin-left:auto}
   b.onclick = function(){ m.classList.toggle('open'); };
   m.addEventListener('click', function(e){ if(e.target.tagName === 'A') m.classList.remove('open'); });
   (function(){
-    var album = document.getElementById('foundersDay'), lb = document.getElementById('fdlb');
-    if(!album || !lb) return;
-    var links = album.querySelectorAll('a'), img = lb.querySelector('img'), cur = 0;
+    var albums = document.querySelectorAll('.album'), lb = document.getElementById('fdlb');
+    if(!albums.length || !lb) return;
+    var links = [], img = lb.querySelector('img'), cur = 0;
     function show(i){ cur = (i + links.length) % links.length; img.src = links[cur].href; img.alt = links[cur].querySelector('img').alt; lb.hidden = false; }
     function close(){ lb.hidden = true; img.removeAttribute('src'); }
-    links.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); show(i); }); });
+    albums.forEach(function(album){
+      var own = album.querySelectorAll('a');
+      own.forEach(function(a, i){ a.addEventListener('click', function(e){ e.preventDefault(); links = own; show(i); }); });
+    });
     lb.querySelector('.fdlb-x').onclick = close;
     lb.querySelector('.fdlb-p').onclick = function(){ show(cur - 1); };
     lb.querySelector('.fdlb-n').onclick = function(){ show(cur + 1); };
