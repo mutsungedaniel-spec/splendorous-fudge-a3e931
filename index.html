@@ -66,15 +66,35 @@ nav.main a.cta:hover{background:var(--purple-d);color:#fff}
 .btn.line{border:1px solid rgba(255,255,255,.45);color:#fff}
 .btn.line:hover{background:rgba(255,255,255,.12)}
 .hero .portrait{position:relative;height:500px}
-.hero .slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1s ease;pointer-events:none}
-.hero .slide.on{opacity:1;pointer-events:auto}
-.hero .portrait img{border-radius:4px;border:1px solid rgba(231,179,102,.5);box-shadow:0 24px 60px rgba(0,0,0,.45);width:100%;height:500px;object-fit:cover}
-.hero .portrait figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,6,21,.94) 55%);padding:40px 18px 16px;font-size:13px;border-radius:0 0 4px 4px}
+/* hero slideshow: soft crossfade with a slow drift on the picture in front */
+.hero .slide{position:absolute;inset:0;margin:0;opacity:0;visibility:hidden;overflow:hidden;border-radius:4px;border:1px solid rgba(231,179,102,.5);box-shadow:0 24px 60px rgba(0,0,0,.45);background:var(--purple-d);transform:scale(1.04);filter:blur(4px) saturate(.85);transition:opacity 1.6s cubic-bezier(.4,0,.2,1),transform 1.6s cubic-bezier(.4,0,.2,1),filter 1.6s ease,visibility 0s linear 1.6s;pointer-events:none}
+.hero .slide.on{opacity:1;visibility:visible;transform:none;filter:none;transition:opacity 1.6s cubic-bezier(.4,0,.2,1),transform 1.6s cubic-bezier(.4,0,.2,1),filter 1.2s ease,visibility 0s;pointer-events:auto;z-index:1}
+.hero .portrait img{display:block;width:100%;height:500px;object-fit:cover;transform:scale(1.02);transition:transform 7.5s ease-out}
+.hero .slide.on img{transform:scale(1.10)}
+.hero .slide.hs-even.on img{transform:scale(1.10) translateX(-1.5%)}
+.hero .portrait figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,6,21,.94) 55%);padding:40px 18px 16px;font-size:13px}
+.hero .portrait figcaption b,.hero .portrait figcaption span{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s ease}
+.hero .slide.on figcaption b{opacity:1;transform:none;transition-delay:.55s}
+.hero .slide.on figcaption span{opacity:1;transform:none;transition-delay:.75s}
 .hero .portrait b{display:block;font-family:"Cormorant Garamond",serif;font-size:19px;color:var(--gold-l);letter-spacing:.3px}
-.hero .portrait span{color:#D9C3CF;font-size:12px}
-.dots{position:absolute;bottom:-26px;left:0;right:0;display:flex;justify-content:center;gap:8px}
-.dots button{width:9px;height:9px;padding:0;border-radius:50%;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,width .3s}
-.dots button.on{background:var(--gold-l);width:24px;border-radius:5px}
+.hero .portrait span{display:block;color:#D9C3CF;font-size:12px}
+.hs-arrow{position:absolute;top:50%;z-index:2;width:40px;height:40px;margin-top:-20px;border-radius:50%;border:1px solid rgba(231,179,102,.55);background:rgba(30,6,21,.55);color:var(--gold-l);font-size:22px;line-height:36px;text-align:center;cursor:pointer;opacity:0;transition:opacity .3s,background .3s;padding:0}
+.hs-arrow:hover{background:rgba(30,6,21,.85)}
+.hs-prev{left:12px}.hs-next{right:12px}
+.hero .portrait:hover .hs-arrow,.hs-arrow:focus-visible{opacity:1}
+@media(hover:none){.hs-arrow{opacity:.85;width:34px;height:34px;margin-top:-17px;line-height:30px;font-size:19px}}
+.dots{position:absolute;bottom:-26px;left:0;right:0;display:flex;justify-content:center;gap:7px}
+.dots button{position:relative;overflow:hidden;width:8px;height:8px;padding:0;border-radius:4px;border:0;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,width .4s ease}
+.dots button.on{width:30px;background:rgba(255,255,255,.25)}
+.dots button i{position:absolute;inset:0;background:var(--gold-l);transform:scaleX(0);transform-origin:left;border-radius:4px}
+.dots button.on i{animation:hsFill var(--hs-dur,6.5s) linear forwards}
+.hero .portrait.hs-paused .dots button.on i{animation-play-state:paused}
+@keyframes hsFill{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){
+  .hero .slide,.hero .slide.on{transform:none;filter:none;transition:opacity .6s ease,visibility 0s}
+  .hero .portrait img,.hero .slide.on img,.hero .slide.hs-even.on img{transform:none;transition:none}
+  .dots button.on i{animation:none;transform:scaleX(1)}
+}
 
 /* ---------- scripture strip ---------- */
 .strip{background:var(--gold);color:#2A1119;text-align:center;padding:26px 0}
@@ -292,7 +312,7 @@ footer .btm span:last-child{margin-left:auto}
 @media(max-width:900px){
   .hero .wrap{grid-template-columns:1fr;padding-top:52px;padding-bottom:52px;gap:34px}
   .hero h1{font-size:41px}
-  .hero .portrait{max-width:330px;height:420px;margin:0 auto}
+  .hero .portrait{width:100%;max-width:330px;height:420px;margin:0 auto}
   .hero .portrait img{height:420px}
   .two,.contact{grid-template-columns:1fr;gap:30px}
   .event{grid-template-columns:1fr}
@@ -397,6 +417,43 @@ footer .btm span:last-child{margin-left:auto}
           <span>The Watchmen on the Walls &middot; Bindura</span>
         </figcaption>
       </figure>
+      <figure class="slide" style="margin:0">
+        <img src="img/hero-04.jpg" alt="Apostle Dr. Felix Mukonowengwe" style="object-position:center 20%" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Apostle Dr. Felix Mukonowengwe</b>
+          <span>Building lives &middot; Building nations</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" style="margin:0">
+        <img src="img/hero-06.jpg" alt="Apostle Dr. Felix Mukonowengwe preaching" style="object-position:center 30%" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Preaching the Word</b>
+          <span>Harvest Time Ministries</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" style="margin:0">
+        <img src="img/hero-05.jpg" alt="Apostle Dr. Felix Mukonowengwe" style="object-position:center 15%" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Ready for the Harvest</b>
+          <span>A Year of Fulfillment &middot; 2026</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" style="margin:0">
+        <img src="img/hero-07.jpg" alt="Apostle Dr. Felix Mukonowengwe ministering with a raised hand" style="object-position:center 25%" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Lifting Holy Hands</b>
+          <span>In the presence of God</span>
+        </figcaption>
+      </figure>
+      <figure class="slide" style="margin:0">
+        <img src="img/hero-08.jpg" alt="Apostle Dr. Felix Mukonowengwe with a guest" style="object-position:center 35%" loading="lazy" decoding="async">
+        <figcaption>
+          <b>In Fellowship</b>
+          <span>Harvest Time Ministries</span>
+        </figcaption>
+      </figure>
+      <button type="button" class="hs-arrow hs-prev" aria-label="Previous picture">&lsaquo;</button>
+      <button type="button" class="hs-arrow hs-next" aria-label="Next picture">&rsaquo;</button>
       <div class="dots" id="heroDots"></div>
     </div>
   </div>
@@ -873,24 +930,42 @@ footer .btm span:last-child{margin-left:auto}
     var box = document.getElementById('heroSlides');
     if(!box) return;
     var slides = box.querySelectorAll('.slide'), dots = document.getElementById('heroDots'), i = 0, timer;
-    slides.forEach(function(_, n){
+    var DUR = 6500;
+    box.style.setProperty('--hs-dur', DUR + 'ms');
+    slides.forEach(function(s2, n){
+      if(n % 2) s2.classList.add('hs-even');
       var d = document.createElement('button');
       d.type = 'button';
       d.setAttribute('aria-label', 'Show picture ' + (n+1));
-      if(n === 0) d.className = 'on';
+      d.appendChild(document.createElement('i'));
       d.onclick = function(){ show(n); restart(); };
       dots.appendChild(d);
     });
+    function warm(n){ var im = slides[n].querySelector('img'); if(im && im.loading === 'lazy'){ im.loading = 'eager'; } }
     function show(n){
-      i = n;
-      slides.forEach(function(s2, k){ s2.classList.toggle('on', k === n); });
-      dots.querySelectorAll('button').forEach(function(d, k){ d.classList.toggle('on', k === n); });
+      i = (n + slides.length) % slides.length;
+      warm(i); warm((i + 1) % slides.length);
+      slides.forEach(function(s2, k){ s2.classList.toggle('on', k === i); });
+      dots.querySelectorAll('button').forEach(function(d, k){
+        d.classList.remove('on');
+        if(k === i){ void d.offsetWidth; d.classList.add('on'); }
+      });
     }
-    function next(){ show((i + 1) % slides.length); }
-    function restart(){ clearInterval(timer); timer = setInterval(next, 6000); }
+    function next(){ show(i + 1); }
+    function restart(){ clearInterval(timer); box.classList.remove('hs-paused'); timer = setInterval(next, DUR); }
+    box.querySelector('.hs-prev').onclick = function(){ show(i - 1); restart(); };
+    box.querySelector('.hs-next').onclick = function(){ show(i + 1); restart(); };
+    var sx = null;
+    box.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, {passive:true});
+    box.addEventListener('touchend', function(e){
+      if(sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if(Math.abs(dx) > 40){ show(i + (dx < 0 ? 1 : -1)); restart(); }
+    });
+    show(0);
     restart();
-    box.addEventListener('mouseenter', function(){ clearInterval(timer); });
-    box.addEventListener('mouseleave', restart);
+    box.addEventListener('mouseenter', function(){ clearInterval(timer); box.classList.add('hs-paused'); });
+    box.addEventListener('mouseleave', function(){ show(i); restart(); });
   })();
 
   /* dates that have passed fade back on their own, so the calendar stays current */
