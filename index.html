@@ -9,12 +9,12 @@
 <meta property="og:description" content="An apostolic ministry in Bindura, Zimbabwe. 2026 theme: Manifestation of God's Purpose &mdash; A Year of Fulfillment.">
 <meta property="og:image" content="img/banner.jpg">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#3B0A2A">
+<meta name="theme-color" content="#0B0A0C">
 <link rel="icon" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --purple:#7A1F52; --purple-d:#3B0A2A; --gold:#C8873F; --gold-l:#E7B366;
@@ -331,6 +331,135 @@ footer .btm span:last-child{margin-left:auto}
   .topbar .sp{display:none}
 }
 @media(max-width:420px){ .brand b{font-size:13px;letter-spacing:.2px} .brand span{font-size:9px} .brand img{height:38px} .hero h1{font-size:32px} }
+/* =====================================================================
+   2026-11 restyle: bolder, cinematic look in the style of leading
+   Zimbabwean ministry sites (dark full-screen hero, uppercase sans
+   headings, black and gold). Everything above still applies; these
+   rules sit on top of it.
+   ===================================================================== */
+:root{--night:#0B0A0C;--night-2:#151217;--gold:#C9963F;--gold-l:#E9BC6C;--head:Montserrat,Inter,system-ui,sans-serif}
+body{background:#fff}
+.topbar{background:#000;color:#bdb5ba;font-size:12.5px;letter-spacing:.3px}
+.topbar a{color:#d8d0d5}.topbar a:hover{color:var(--gold-l)}
+header.nav{background:rgba(11,10,12,.94);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand b{font-family:var(--head);font-size:16px;letter-spacing:1.6px;color:#fff;font-weight:800}
+.brand span{color:var(--gold-l);font-style:normal;letter-spacing:1.2px;text-transform:uppercase;font-size:10px}
+nav.main a{color:#e9e3e6;font-family:var(--head);font-size:12.5px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase}
+nav.main a:hover{background:transparent;color:var(--gold-l)}
+nav.main a.cta{background:var(--gold);color:#111;border-radius:40px;padding:11px 22px}
+nav.main a.cta:hover{background:var(--gold-l);color:#111}
+.burger{border-color:rgba(255,255,255,.25);color:#fff}
+
+/* full-screen hero, slideshow behind the words */
+.hero{background:var(--night);min-height:calc(100vh - 110px);min-height:calc(100svh - 110px);display:flex;align-items:center}
+.hero .bg{display:none}
+.hero:after{z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 55%,rgba(0,0,0,.35) 100%),linear-gradient(0deg,rgba(0,0,0,.7),transparent 45%)}
+.hero .wrap{display:block;width:100%;padding-top:90px;padding-bottom:110px}
+.hero-copy{max-width:760px}
+.hero .portrait,.hero .portrait img{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0}
+.hero .portrait{z-index:0}
+.hero .slide{border:0;border-radius:0;box-shadow:none;background:var(--night)}
+.hero .portrait figcaption{z-index:2;left:auto;right:28px;bottom:58px;background:none;padding:0;text-align:right;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.hero .portrait b{font-family:var(--head);font-size:13px;letter-spacing:1.6px;text-transform:uppercase}
+.hs-arrow{z-index:3;opacity:.75;border-color:rgba(255,255,255,.45);color:#fff;background:rgba(0,0,0,.35)}
+.hs-prev{left:18px}.hs-next{right:18px}
+.dots{z-index:3;bottom:26px}
+.eyebrow{border:0;padding:0;font-family:var(--head);font-weight:700;letter-spacing:3.5px;color:var(--gold-l);margin-bottom:18px}
+.eyebrow:before{content:"";display:inline-block;width:34px;height:2px;background:var(--gold);vertical-align:middle;margin-right:12px}
+.hero h1{font-family:var(--head);font-weight:900;text-transform:uppercase;font-size:clamp(38px,6.2vw,78px);line-height:1;letter-spacing:-.5px;margin:0}
+.hero-theme{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.6vw,32px);color:var(--gold-l);margin:14px 0 0}
+.hero p.lead{color:#e6e0e3;font-size:17px;margin:18px 0 30px;max-width:34em}
+.btn{font-family:var(--head);text-transform:uppercase;letter-spacing:1.4px;font-size:13px;font-weight:700;border-radius:40px;padding:15px 28px;transition:background .2s,transform .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:#111}
+.btn.line{border:2px solid #fff;color:#fff}
+.btn.line:hover{background:#fff;color:#111}
+.hero-verse{margin:38px 0 0;max-width:34em;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;line-height:1.45;color:#f1ecee;border-left:3px solid var(--gold);padding-left:18px}
+.hero-verse cite{display:block;font-family:var(--head);font-style:normal;font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold-l);margin-top:8px}
+
+/* scripture strip */
+.strip{background:var(--night-2);color:#efe8eb;padding:34px 0}
+.strip cite{color:var(--gold-l);opacity:1}
+
+/* headings everywhere */
+.kicker{font-family:var(--head);letter-spacing:3.2px;font-size:11.5px;font-weight:700;color:var(--gold)}
+.shead h2,#about h2.serif,.online h2{font-family:var(--head)!important;text-transform:uppercase;font-weight:800!important;letter-spacing:.5px;font-size:clamp(26px,3.2vw,38px)!important;line-height:1.12!important;color:var(--night)!important}
+.rule{width:64px;height:4px}
+section{padding:90px 0}
+section.alt{background:#F6F4F2}
+.leader h3,.min h3,.event h3,.value b,.mon h4,.time b,.payhead h3,.givecard h3{font-family:var(--head);font-weight:800;letter-spacing:.2px}
+.leader h3,.min h3,.value b,.mon h4{color:var(--night);font-size:18px}
+.event h3{font-size:24px;text-transform:uppercase;color:var(--night)}
+.leader,.min,.value,.mon,.event,.up{border-radius:10px}
+.leader{transition:transform .25s,box-shadow .25s}
+.leader:hover,.min:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+.min{transition:transform .25s,box-shadow .25s}
+.min:after{background:var(--gold)}
+.value{border-top-color:var(--gold)}
+
+/* upcoming services: dark band straight after the hero */
+.svc-band{background:var(--night);color:#fff}
+.svc-band .shead h2{color:#fff!important}
+.svc-band .shead p,.svc-band .hint{color:#c9c1c5}
+.svc-band .hint a{color:var(--gold-l)}
+.svc-band .time{background:var(--night-2);border:1px solid rgba(255,255,255,.08);border-radius:10px;transition:border-color .25s,transform .25s}
+.svc-band .time:hover{border-color:var(--gold);transform:translateY(-3px)}
+.time b{font-size:16px;text-transform:uppercase;letter-spacing:.8px;color:#fff}
+.time span{color:var(--gold-l);text-transform:uppercase;font-size:11.5px;letter-spacing:1.6px;font-weight:600}
+.time em{font-family:var(--head);font-size:22px;font-weight:800;border-top-color:rgba(255,255,255,.1)}
+
+/* online church banner */
+.online{position:relative;color:#fff;text-align:center;background:url('img/gallery-stage.jpg') center/cover no-repeat;padding:120px 0}
+.online:before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.72)}
+.online .wrap{position:relative;max-width:820px}
+.online h2{color:#fff!important;font-size:clamp(30px,4.4vw,52px)!important;margin:0 0 14px}
+.online p{color:#e4dde0;font-size:17px;margin:0 auto 30px;max-width:36em}
+.online .btns{justify-content:center}
+
+/* giving and footer go black */
+.give,footer{background:var(--night)}
+footer{color:#a9a1a5}
+footer a{color:#a9a1a5}
+.socials a{border-radius:40px}
+
+@media(max-width:900px){
+  .hero{min-height:calc(100svh - 100px)}
+  .hero .wrap{padding-top:60px;padding-bottom:96px}
+  .hero .portrait{max-width:none;height:auto}
+  .hero .portrait img{height:100%}
+  .hero .portrait figcaption{display:none}
+  .hero:after{background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.6) 60%,rgba(0,0,0,.45) 100%)}
+  nav.main{background:var(--night);border-bottom-color:rgba(255,255,255,.1)}
+  nav.main a{border-bottom-color:rgba(255,255,255,.08)}
+  section{padding:60px 0}
+  .online{padding:80px 0}
+}
+@media(max-width:520px){
+  .hero .btns .btn{width:100%;text-align:center}
+  .hero-verse{font-size:17px}
+}
+/* hero layering: words above the pictures */
+.hero .wrap{position:static}
+.hero-copy{position:relative;z-index:2}
+.hero:after{pointer-events:none;background:linear-gradient(90deg,var(--night) 0%,var(--night) 38%,rgba(11,10,12,.55) 58%,rgba(11,10,12,.1) 80%,rgba(11,10,12,.25) 100%),linear-gradient(0deg,rgba(11,10,12,.75),transparent 35%)}
+@media(min-width:901px){.hero .portrait{left:auto;width:58%}.hs-prev{left:auto;right:76px}.hs-next{right:24px}.hs-arrow{top:auto;bottom:22px;margin-top:0}.dots{left:auto;right:140px;justify-content:flex-end;bottom:38px}.hero .portrait figcaption{bottom:80px}}
+@media(max-width:900px){.hero:after{background:linear-gradient(0deg,var(--night) 0%,rgba(11,10,12,.85) 45%,rgba(11,10,12,.35) 75%,rgba(11,10,12,.2) 100%)}.hero{align-items:flex-end}.hero .wrap{padding-top:40vh;padding-bottom:64px}.hs-arrow{display:none}.dots{bottom:22px}}
+@media(max-width:420px){.brand b{font-size:12px;letter-spacing:.6px}.brand span{font-size:8.5px;letter-spacing:.6px}.brand img{height:36px}header.nav .wrap{gap:8px;padding-left:14px;padding-right:14px}}
+
+/* the fade sits on the picture frame itself, under captions and controls */
+.hero:after{display:none}
+.hero .portrait:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--night) 0%,rgba(11,10,12,.75) 18%,rgba(11,10,12,.15) 50%,rgba(11,10,12,.05) 100%),linear-gradient(0deg,rgba(11,10,12,.7),transparent 30%)}
+.hero .portrait figcaption{display:none}
+@media(max-width:900px){
+  .hero .portrait:after{background:linear-gradient(0deg,var(--night) 0%,rgba(11,10,12,.92) 38%,rgba(11,10,12,.3) 62%,rgba(11,10,12,.1) 100%)}
+  .hero .wrap{padding-top:52vh;padding-bottom:60px}
+  .hero .portrait img{object-position:center 12%!important;height:62%}
+  .eyebrow{letter-spacing:2.2px;font-size:10.5px}
+  .eyebrow:before{width:22px;margin-right:8px}
+  .hero p.lead{font-size:15.5px}
+}
+.give .shead h2{color:#fff!important}
+#anesuBtn{background:var(--night)}#anesuBtn:hover{background:#000}.anesu-top{background:var(--night)}
 </style>
 <script type="application/ld+json">
 {
@@ -377,6 +506,7 @@ footer .btm span:last-child{margin-left:auto}
     <a href="#leaders">Leadership</a>
     <a href="#ministries">Ministries</a>
     <a href="#events">Events</a>
+    <a href="#online">Watch</a>
     <a href="#give">Giving</a>
     <a class="cta" href="#contact">Visit Us</a>
   </nav>
@@ -386,14 +516,16 @@ footer .btm span:last-child{margin-left:auto}
 <div class="hero" id="top">
   <div class="bg"></div>
   <div class="wrap">
-    <div>
-      <span class="eyebrow">2026 Annual Theme &middot; Bindura, Zimbabwe</span>
-      <h1>Manifestation of God's Purpose<em>A Year of Fulfillment</em></h1>
+    <div class="hero-copy">
+      <span class="eyebrow">2026 Theme &middot; A Year of Fulfillment</span>
+      <h1>Building lives,<br>building nations</h1>
+      <p class="hero-theme">Manifestation of God's Purpose</p>
       <p class="lead">Harvest Time Ministries is an apostolic house raised to build lives and build nations &mdash; a people called to pray, to proclaim, and to stand as watchmen on the walls until Jerusalem becomes a praise in the earth.</p>
       <div class="btns">
-        <a class="btn gold" href="#contact">Plan your visit</a>
-        <a class="btn line" href="#about">About the ministry</a>
+        <a class="btn gold" href="#contact">Connect with our community</a>
+        <a class="btn line" href="#give">Support our ministry</a>
       </div>
+      <blockquote class="hero-verse">&ldquo;Thou shalt also be a crown of glory in the hand of the LORD, and a royal diadem in the hand of thy God.&rdquo;<cite>Isaiah 62:3</cite></blockquote>
     </div>
     <div class="portrait" id="heroSlides">
       <figure class="slide on" style="margin:0">
@@ -463,6 +595,26 @@ footer .btm span:last-child{margin-left:auto}
   <p>&ldquo;Thou shalt no more be termed Forsaken&hellip; for the LORD delighteth in thee&hellip; I have set watchmen upon thy walls, O Jerusalem, which shall never hold their peace day nor night&hellip; and give him no rest, till he make Jerusalem a praise in the earth.&rdquo;</p>
   <cite>Isaiah 62:4&ndash;9 &middot; Theme scripture</cite>
 </div></div>
+
+<!-- ============ SERVICES ============ -->
+<section class="svc-band" id="services">
+  <div class="wrap">
+    <div class="shead mid">
+      <div class="kicker">Worship with us</div>
+      <h2>Upcoming services</h2>
+      <p>All are welcome &mdash; come as you are.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="times">
+      <div class="time"><b>Sunday Service</b><span>Sunday</span><em>09:00 &ndash; 13:00</em></div>
+      <div class="time"><b>Lunchtime Prayer</b><span>Monday to Friday</span><em>13:00 &ndash; 14:00</em></div>
+      <div class="time"><b>Leadership Meeting &amp; Teaching</b><span>Wednesday &middot; online</span><em>20:00 &ndash; 21:00</em></div>
+      <div class="time"><b>Youth Teachings</b><span>Saturday</span><em>13:00 &ndash; 14:30</em></div>
+      <div class="time"><b>Praise &amp; Worship Practice</b><span>Saturday</span><em>14:30 &ndash; 15:30</em></div>
+    </div>
+    <p class="hint" style="text-align:center;margin:22px 0 0">The Wednesday leadership meeting and teaching is held virtually &mdash; call <a href="tel:+263772572564">+263 77 257 2564</a> for the link.</p>
+  </div>
+</section>
 
 <!-- ============ ABOUT ============ -->
 <section id="about">
@@ -540,25 +692,6 @@ footer .btm span:last-child{margin-left:auto}
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="alt" id="services">
-  <div class="wrap">
-    <div class="shead mid">
-      <div class="kicker">Join us</div>
-      <h2>Service times</h2>
-      <p>All are welcome &mdash; come as you are.</p>
-      <div class="rule"></div>
-    </div>
-    <div class="times">
-      <div class="time"><b>Sunday Service</b><span>Sunday</span><em>09:00 &ndash; 13:00</em></div>
-      <div class="time"><b>Lunchtime Prayer</b><span>Monday to Friday</span><em>13:00 &ndash; 14:00</em></div>
-      <div class="time"><b>Leadership Meeting &amp; Teaching</b><span>Wednesday &middot; online</span><em>20:00 &ndash; 21:00</em></div>
-      <div class="time"><b>Youth Teachings</b><span>Saturday</span><em>13:00 &ndash; 14:30</em></div>
-      <div class="time"><b>Praise &amp; Worship Practice</b><span>Saturday</span><em>14:30 &ndash; 15:30</em></div>
-    </div>
-    <p class="hint" style="text-align:center;margin:22px 0 0">The Wednesday leadership meeting and teaching is held virtually &mdash; call <a href="tel:+263772572564">+263 77 257 2564</a> for the link.</p>
-  </div>
-</section>
 
 <!-- ============ MINISTRIES ============ -->
 <section id="ministries">
@@ -768,6 +901,20 @@ footer .btm span:last-child{margin-left:auto}
   </div>
 </section>
 
+<!-- ============ ONLINE CHURCH ============ -->
+<section class="online" id="online">
+  <div class="wrap">
+    <div class="kicker">Wherever you are</div>
+    <h2>Join our online church</h2>
+    <p>Experience God's transforming power from anywhere in the world. Follow the services, teachings and conferences of Harvest Time Ministries online, and join the Wednesday leadership teaching virtually.</p>
+    <div class="btns">
+      <a class="btn gold" href="https://www.facebook.com/search/top?q=Harvest%20Time%20Ministries" target="_blank" rel="noopener">Watch on Facebook</a>
+      <a class="btn line" href="https://www.tiktok.com/@harvesttime_ministries" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn line" href="https://www.instagram.com/htmzimbabwe" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ GIVING ============ -->
 <section class="give" id="give">
   <div class="wrap">
@@ -964,8 +1111,6 @@ footer .btm span:last-child{margin-left:auto}
     });
     show(0);
     restart();
-    box.addEventListener('mouseenter', function(){ clearInterval(timer); box.classList.add('hs-paused'); });
-    box.addEventListener('mouseleave', function(){ show(i); restart(); });
   })();
 
   /* dates that have passed fade back on their own, so the calendar stays current */
